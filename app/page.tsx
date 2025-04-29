@@ -28,7 +28,7 @@ export default function Home() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  🐾 Bienvenido a la Nueva Era de la Gestión Veterinaria
+                  Bienvenido a la Nueva Era de la Gestión Veterinaria
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
                   No es solo un sistema. Es el corazón digital de tu clínica.
@@ -60,7 +60,7 @@ export default function Home() {
                 <img
                   alt="Veterinary Care"
                   className="aspect-video overflow-hidden rounded-xl object-cover object-center"
-                  src="/placeholder.svg?height=550&width=750"
+                  src="/images/layout.svg"
                 />
               </div>
             </div>
@@ -100,9 +100,10 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Patient Management</h3>
+                  <h3 className="text-xl font-bold">Una plataforma, todas las soluciones</h3>
                   <p className="text-muted-foreground">
-                    Keep track of all your patients with detailed records and medical history.
+                  Descubre una herramienta que piensa como tú y trabaja por ti.
+                  Desde la recepción hasta el quirófano, cada parte de tu clínica conectada con tecnología que simplifica.
                   </p>
                 </div>
               </div>
@@ -127,9 +128,10 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Appointment Scheduling</h3>
+                  <h3 className="text-xl font-bold">Agenda inteligente</h3>
                   <p className="text-muted-foreground">
-                    Easily schedule and manage appointments with an intuitive calendar interface.
+                  Organiza tu día con un calendario que entiende tu ritmo.
+                  Arrastra, suelta, programa y olvídate: los recordatorios harán el resto.
                   </p>
                 </div>
               </div>
@@ -151,9 +153,15 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Analytics Dashboard</h3>
+                  <h3 className="text-xl font-bold">Análisis que inspiran decisiones</h3>
                   <p className="text-muted-foreground">
-                    Get insights into your practice with comprehensive analytics and reporting.
+                  Mira el pulso de tu clínica en tiempo real.
+                  </p>
+                  <p className="text-muted-foreground">
+                  Pacientes atendidos, rendimiento del equipo, días de mayor demanda...
+                  </p>
+                  <p className="text-muted-foreground">
+                  Tu próxima mejora empieza con un gráfico.
                   </p>
                 </div>
               </div>
@@ -165,17 +173,17 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="flex items-center gap-2">
             <Paw className="h-5 w-5 text-primary" />
-            <p className="text-sm text-muted-foreground">© 2023 PawCare. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">© 2025 PawCare. All rights reserved.</p>
           </div>
           <div className="flex gap-4 text-sm text-muted-foreground">
             <Link href="#" className="hover:underline">
-              Terms
+              Terminos
             </Link>
             <Link href="#" className="hover:underline">
-              Privacy
+              Privacidad
             </Link>
             <Link href="#" className="hover:underline">
-              Contact
+              Contacto
             </Link>
           </div>
         </div>
