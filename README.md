@@ -16,7 +16,6 @@
 ## 📋 Contenido
 
 - [🚀 Características principales](#-características-principales)
-- [🖥️ Capturas de pantalla](#️-capturas-de-pantalla)
 - [🛠️ Tecnologías utilizadas](#️-tecnologías-utilizadas)
 - [🔧 Instalación y configuración](#-instalación-y-configuración)
 - [📜 Scripts disponibles](#-scripts-disponibles)
@@ -215,11 +214,9 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ## 📞 Soporte
 
-¿Tienes preguntas o necesitas ayuda? No dudes en contactarnos. ¡Esperamos que PawCare mejore el control digital de tu clínica veterinaria!
+¿Tienes preguntas o necesitas ayuda? No dudes en contactarme. ¡Esperamos que PawCare mejore el control digital de tu clínica veterinaria!
 
-- 📧 Email: soporte@pawcare.com
-- 🌐 Sitio web: www.pawcare.com
-- 💬 Discord: Unirse al servidor
+- 📧 Email: janneralexandergg@gmail.com
 
 ---
 
