@@ -194,7 +194,9 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ### Responsable del proyecto
 
-[Nombre del Responsable] - mantiene y coordina el desarrollo de PawCare.
+Janner Garcia - CEO
+José Pullaguari - Diseñador UX/UI
+Juan Siguence - Diseñador UX/UI
 
 ### Proceso para contribuir
 
