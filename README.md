@@ -194,9 +194,9 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ### Responsable del proyecto
 
-Janner Garcia - CEO
-José Pullaguari - Diseñador UX/UI
-Juan Siguence - Diseñador UX/UI
+1. Janner Garcia - CEO
+2. José Pullaguari - Diseñador UX/UI
+3. Juan Siguence - Diseñador UX/UI
 
 ### Proceso para contribuir
 
