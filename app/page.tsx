@@ -220,7 +220,7 @@ export default function Home() {
                 Conoce a las personas detrás de PawCare.
               </p>
             </div>
-            <div className="grid gap-6 py-12 lg:grid-cols-2">
+            <div className="grid gap-6 py-12 lg:grid-cols-3">
               <TeamMember
                 name="vsxn"
                 role="CEO & Fundador"
@@ -228,6 +228,11 @@ export default function Home() {
               />
               <TeamMember
                 name="Juan Siguence"
+                role="Diseñador UI/UX"
+                image="/member2.webp"
+              />
+              <TeamMember
+                name="Jose Pullaguari"
                 role="Diseñador UI/UX"
                 image="/member2.webp"
               />
