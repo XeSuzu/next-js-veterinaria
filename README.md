@@ -220,4 +220,4 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ---
 
-<div align="center"> <p> <a href="https://github.com/pawcare"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /> </a> <a href="https://discord.gg/pawcare"> <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /> </a> </p> <p>Hecho con ❤️ por el equipo de PawCare</p> </div>
+<div align="center"> <p> <a href="https://github.com/XeSuzu"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /> </a> <a href="727583213253558373"> <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /> </a> </p> <p>Hecho con ❤️ por el equipo de PawCare</p> </div>
