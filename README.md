@@ -18,7 +18,6 @@
 ## 📋 Contenido
 
 - [🚀 Características principales](#-características-principales)
-- [🖥️ Capturas de pantalla](#️-capturas-de-pantalla)
 - [🛠️ Tecnologías utilizadas](#️-tecnologías-utilizadas)
 - [🔧 Instalación y configuración](#-instalación-y-configuración)
 - [📜 Scripts disponibles](#-scripts-disponibles)
@@ -43,19 +42,6 @@
 - **🌓 Temas claro y oscuro**: Personaliza la interfaz según tus preferencias.
 - **📊 Reportes analíticos**: Genera informes detallados para mejorar tu negocio.
 - **🔔 Notificaciones**: Sistema de alertas para citas, tratamientos y más.
-
----
-
-## 🖥️ Capturas de pantalla
-
-<div align="center">
-  <img src="https://via.placeholder.com/400x225" alt="Dashboard" width="45%" />
-  <img src="https://via.placeholder.com/400x225" alt="Ficha de Paciente" width="45%" />
-</div>
-<div align="center">
-  <img src="https://via.placeholder.com/400x225" alt="Calendario de Citas" width="45%" />
-  <img src="https://via.placeholder.com/400x225" alt="Portal del Cliente" width="45%" />
-</div>
 
 ---
 
@@ -92,17 +78,12 @@ cp .env.example .env.local
 
 # Inicia el servidor de desarrollo
 npm run dev
-```
 
-Visita [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación en funcionamiento.
+Visita http://localhost:3000 en tu navegador para ver la aplicación en funcionamiento.
 
----
-
-## 📜 Scripts disponibles
-
+📜 Scripts disponibles
 PawCare incluye varios scripts NPM para facilitar el desarrollo y despliegue:
 
-```bash
 # Inicia el servidor de desarrollo
 npm run dev
 
@@ -114,13 +95,9 @@ npm run start
 
 # Ejecuta el linter para verificar errores de código
 npm run lint
-```
 
----
+📂 Estructura del proyecto
 
-## 📂 Estructura del proyecto
-
-```plaintext
 /pawcare/
 ├── app/
 │   ├── auth/               # Páginas de autenticación (login, registro)
@@ -136,48 +113,36 @@ npm run lint
 │   ├── dashboard-layout.tsx
 │   └── settings-dialog.tsx
 ├── lib/
-│   ├── utils.ts            # Funciones utilitarias
+│   ├── [utils.ts](http://_vscodecontentref_/1)            # Funciones utilitarias
 │   ├── api.ts              # Funciones de API
 │   └── hooks/              # Custom hooks
 ├── public/                 # Archivos estáticos (imágenes, íconos, etc.)
 ├── styles/                 # Estilos adicionales
 ├── types/                  # Definiciones de tipos TypeScript
-├── tailwind.config.ts      # Configuración de Tailwind CSS
-├── postcss.config.mjs      # Configuración de PostCSS
-├── next.config.mjs         # Configuración de Next.js
-└── README.md               # Documentación del proyecto
-```
+├── [tailwind.config.ts](http://_vscodecontentref_/2)      # Configuración de Tailwind CSS
+├── [postcss.config.mjs](http://_vscodecontentref_/3)      # Configuración de PostCSS
+├── [next.config.mjs](http://_vscodecontentref_/4)         # Configuración de Next.js
+└── [README.md](http://_vscodecontentref_/5)               # Documentación del proyecto
 
----
+⚙️ Funciones esenciales
+PawCare incluye utilidades clave para el proyecto. Por ejemplo, la función cn combina clases dinámicas de Tailwind CSS de manera eficiente:
 
-## ⚙️ Funciones esenciales
-
-PawCare incluye utilidades clave para el proyecto. Por ejemplo, la función `cn` combina clases dinámicas de Tailwind CSS de manera eficiente:
-
-```typescript
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
-```
 
 Esta función permite manejar clases condicionales de forma simple:
 
-- Combina múltiples clases dinámicamente
-- Resuelve conflictos entre clases de Tailwind automáticamente
-- Simplifica la creación de componentes personalizables
-
----
-
-## 🎨 Personalización
-
-### Temas personalizables
-
+Combina múltiples clases dinámicamente
+Resuelve conflictos entre clases de Tailwind automáticamente
+Simplifica la creación de componentes personalizables
+🎨 Personalización
+Temas personalizables
 Con soporte para temas claro y oscuro, PawCare se adapta a las preferencias de los usuarios:
 
-```typescript
 // Configuración de Tailwind CSS
 theme: {
   extend: {
@@ -188,63 +153,33 @@ theme: {
     }
   }
 }
-```
 
-### Variables de entorno
+Variables de entorno
+Crea un archivo .env.local en la raíz del proyecto para configurar las variables necesarias:
 
-Crea un archivo `.env.local` en la raíz del proyecto para configurar las variables necesarias:
-
-```
 DATABASE_URL=tu_url_de_base_de_datos
 API_KEY=tu_clave_api
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-```
 
----
-
-## 👥 Contribuciones
-
+👥 Contribuciones
 ¡Las contribuciones son bienvenidas! Si tienes ideas, mejoras o encuentras errores, no dudes en abrir un issue o enviar un pull request.
 
-### Responsable del proyecto
-
+Responsable del proyecto
 [Nombre del Responsable] - mantiene y coordina el desarrollo de PawCare.
 
-### Proceso para contribuir
+Proceso para contribuir
+Haz fork del repositorio
+Crea una rama para tu feature (git checkout -b feature/amazing-feature)
+Realiza tus cambios y haz commit (git commit -m 'Add amazing feature')
+Push a la rama (git push origin feature/amazing-feature)
+Abre un Pull Request
+📄 Licencia
+Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
 
-1. Haz fork del repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/amazing-feature`)
-3. Realiza tus cambios y haz commit (`git commit -m 'Add amazing feature'`)
-4. Push a la rama (`git push origin feature/amazing-feature`)
-5. Abre un Pull Request
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-## 📞 Soporte
-
+📞 Soporte
 ¿Tienes preguntas o necesitas ayuda? No dudes en contactarnos. ¡Esperamos que PawCare mejore el control digital de tu clínica veterinaria!
 
-- 📧 Email: soporte@pawcare.com
-- 🌐 Sitio web: [www.pawcare.com](https://www.pawcare.com)
-- 💬 Discord: [Unirse al servidor](https://discord.gg/pawcare)
-
----
-
-<div align="center">
-  <p>
-    <a href="https://twitter.com/pawcare">
-      <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" />
-    </a>
-    <a href="https://www.linkedin.com/company/pawcare">
-      <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-    </a>
-  </p>
-  
-  <p>Hecho con ❤️ por el equipo de PawCare</p>
-</div>
+📧 Email: soporte@pawcare.com
+🌐 Sitio web: www.pawcare.com
+💬 Discord: Unirse al servidor
+<div align="center"> <p> <a href="https://twitter.com/pawcare"> <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" /> </a> <a href="https://www.linkedin.com/company/pawcare"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /> </a> </p> <p>Hecho con ❤️ por el equipo de PawCare</p> </div> ```
