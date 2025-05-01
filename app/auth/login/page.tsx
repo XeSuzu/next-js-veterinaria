@@ -14,10 +14,17 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { PawPrintIcon as Paw, Loader2 } from "lucide-react";
+import {
+  PawPrintIcon as Paw,
+  Loader2,
+  Facebook,
+  Instagram,
+  Github,
+} from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ModeToggle } from "@/components/mode-toggle";
+import { motion } from "framer-motion";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -42,79 +49,126 @@ export default function LoginPage() {
       </div>
 
       {/* Logo */}
-      <Link href="/" className="absolute top-4 left-4 flex items-center gap-2">
-        <Paw className="h-6 w-6 text-primary" />
-        <span className="text-xl font-bold">PawCare</span>
+      <Link
+        href="/"
+        className="absolute top-4 left-4 flex items-center gap-2 group"
+      >
+        <motion.div
+          initial={{ rotate: 0 }}
+          whileHover={{ rotate: 20 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
+          <Paw className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
+        </motion.div>
+        <span className="text-xl font-bold tracking-tight text-primary group-hover:text-primary/80 transition-colors">
+          PawCare
+        </span>
       </Link>
 
       {/* Login Card */}
-      <Card className="w-full max-w-md bg-white dark:bg-muted shadow-lg rounded-lg animate-transition">
-        <CardHeader className="space-y-1 text-center">
-          <div className="flex justify-center">
-            <Paw className="h-10 w-10 text-primary" />
-          </div>
-          <CardTitle className="text-2xl font-bold">Inicia sesión</CardTitle>
-          <CardDescription>
-            Ingresa tu correo y contraseña para acceder a tu cuenta
-          </CardDescription>
-        </CardHeader>
-        <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Correo electrónico</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="nombre@ejemplo.com"
-                required
-                className="focus:ring-primary focus:border-primary"
-              />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="w-full max-w-md"
+      >
+        <Card className="bg-white dark:bg-muted shadow-lg rounded-lg animate-transition">
+          <CardHeader className="space-y-1 text-center">
+            <div className="flex justify-center">
+              <Paw className="h-10 w-10 text-primary" />
             </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Contraseña</Label>
+            <CardTitle className="text-2xl font-bold">Inicia sesión</CardTitle>
+            <CardDescription>
+              Ingresa tu correo y contraseña para acceder a tu cuenta
+            </CardDescription>
+          </CardHeader>
+          <form onSubmit={handleSubmit}>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email">Correo electrónico</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="nombre@ejemplo.com"
+                  required
+                  className="focus:ring-primary focus:border-primary"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password">Contraseña</Label>
+                  <Link
+                    href="/auth/forgot-password"
+                    className="text-sm text-primary underline-offset-4 hover:underline"
+                  >
+                    ¿Olvidaste tu contraseña?
+                  </Link>
+                </div>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="********"
+                  required
+                  className="focus:ring-primary focus:border-primary"
+                />
+              </div>
+            </CardContent>
+            <CardFooter className="flex flex-col space-y-4">
+              <Button
+                type="submit"
+                className="w-full bg-primary text-white hover:bg-primary/90 transition-all duration-300"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Por favor
+                    espera
+                  </>
+                ) : (
+                  "Iniciar sesión"
+                )}
+              </Button>
+
+              {/* Social Login */}
+              <div className="flex items-center justify-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  O inicia sesión con:
+                </p>
+                <div className="flex gap-4">
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Facebook className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Instagram className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Github className="h-6 w-6" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="text-center text-sm">
+                ¿No tienes una cuenta?{" "}
                 <Link
-                  href="/auth/forgot-password"
-                  className="text-sm text-primary underline-offset-4 hover:underline"
+                  href="/auth/register"
+                  className="text-primary underline-offset-4 hover:underline"
                 >
-                  ¿Olvidaste tu contraseña?
+                  Regístrate
                 </Link>
               </div>
-              <Input
-                id="password"
-                type="password"
-                required
-                className="focus:ring-primary focus:border-primary"
-              />
-            </div>
-          </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
-            <Button
-              type="submit"
-              className="w-full bg-primary text-white hover:bg-primary/90 transition-all duration-300"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Por favor
-                  espera
-                </>
-              ) : (
-                "Iniciar sesión"
-              )}
-            </Button>
-            <div className="text-center text-sm">
-              ¿No tienes una cuenta?{" "}
-              <Link
-                href="/auth/register"
-                className="text-primary underline-offset-4 hover:underline"
-              >
-                Regístrate
-              </Link>
-            </div>
-          </CardFooter>
-        </form>
-      </Card>
+            </CardFooter>
+          </form>
+        </Card>
+      </motion.div>
     </div>
   );
 }

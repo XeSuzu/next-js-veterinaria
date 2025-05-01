@@ -1,67 +1,74 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Plus, Search } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Plus, Search } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 // Sample data
 const veterinarians = [
   {
     id: "V001",
-    name: "Dr. Sarah Johnson",
+    name: "Dra. Sarah Johnson",
     specialty: "General Practice",
     experience: "8 years",
     email: "sarah.johnson@pawcare.com",
     phone: "(555) 123-4567",
     availability: "Full-time",
-    avatar: "/placeholder.svg",
+    avatar: "/veterinarios/veterinario1.webp",
     initials: "SJ",
   },
   {
     id: "V002",
-    name: "Dr. Michael Wilson",
+    name: "Dra. Emily Wilson",
     specialty: "Surgery",
     experience: "12 years",
     email: "michael.wilson@pawcare.com",
     phone: "(555) 234-5678",
     availability: "Full-time",
-    avatar: "/placeholder.svg",
+    avatar: "/veterinarios/veterinario2.webp",
     initials: "MW",
   },
   {
     id: "V003",
-    name: "Dr. Emily Martinez",
+    name: "Dra. Emily Martinez",
     specialty: "Dermatology",
     experience: "6 years",
     email: "emily.martinez@pawcare.com",
     phone: "(555) 345-6789",
     availability: "Part-time",
-    avatar: "/placeholder.svg",
+    avatar: "/veterinarios/veterinario3.webp",
     initials: "EM",
   },
   {
     id: "V004",
-    name: "Dr. David Thompson",
+    name: "Dra. Ashley Smith",
     specialty: "Cardiology",
     experience: "10 years",
     email: "david.thompson@pawcare.com",
     phone: "(555) 456-7890",
     availability: "Full-time",
-    avatar: "/placeholder.svg",
+    avatar: "/veterinarios/veterinario4.jpg",
     initials: "DT",
   },
   {
     id: "V005",
-    name: "Dr. Jessica Brown",
+    name: "Dr. Johan Xeneize",
     specialty: "Neurology",
     experience: "9 years",
     email: "jessica.brown@pawcare.com",
     phone: "(555) 567-8901",
     availability: "Part-time",
-    avatar: "/placeholder.svg",
+    avatar: "/veterinarios/veterinario5i.webp",
     initials: "JB",
   },
   {
@@ -72,10 +79,10 @@ const veterinarians = [
     email: "robert.davis@pawcare.com",
     phone: "(555) 678-9012",
     availability: "Full-time",
-    avatar: "/placeholder.svg",
+    avatar: "/veterinarios/veterinrio6.webp",
     initials: "RD",
   },
-]
+];
 
 export default function VeterinariansPage() {
   return (
@@ -91,7 +98,11 @@ export default function VeterinariansPage() {
         <div className="flex flex-col sm:flex-row gap-4 justify-between">
           <div className="relative w-full sm:w-auto">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input type="search" placeholder="Search veterinarians..." className="w-full sm:w-[300px] pl-8" />
+            <Input
+              type="search"
+              placeholder="Search veterinarians..."
+              className="w-full sm:w-[300px] pl-8"
+            />
           </div>
         </div>
 
@@ -101,7 +112,10 @@ export default function VeterinariansPage() {
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-4">
                   <Avatar className="h-12 w-12">
-                    <AvatarImage src={vet.avatar || "/placeholder.svg"} alt={vet.name} />
+                    <AvatarImage
+                      src={vet.avatar || "/placeholder.svg"}
+                      alt={vet.name}
+                    />
                     <AvatarFallback>{vet.initials}</AvatarFallback>
                   </Avatar>
                   <div>
@@ -126,7 +140,13 @@ export default function VeterinariansPage() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Availability:</span>
-                    <Badge variant={vet.availability === "Full-time" ? "default" : "secondary"}>
+                    <Badge
+                      variant={
+                        vet.availability === "Full-time"
+                          ? "default"
+                          : "secondary"
+                      }
+                    >
                       {vet.availability}
                     </Badge>
                   </div>
@@ -147,5 +167,5 @@ export default function VeterinariansPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

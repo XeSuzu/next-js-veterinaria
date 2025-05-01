@@ -1,7 +1,13 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Plus, FileText, CalendarDays } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Plus, FileText, CalendarDays } from "lucide-react";
+import Link from "next/link";
 
 // Sample data
 const pets = [
@@ -14,7 +20,7 @@ const pets = [
     weight: "65 lbs",
     lastCheckup: "April 15, 2023",
     nextVaccination: "May 25, 2023",
-    image: "/placeholder.svg",
+    image: "/mascotas/golde1.webp",
   },
   {
     id: 2,
@@ -25,21 +31,34 @@ const pets = [
     weight: "10 lbs",
     lastCheckup: "April 10, 2023",
     nextVaccination: "October 10, 2023",
-    image: "/placeholder.svg",
+    image: "/mascotas/siames1.webp",
   },
-]
+  {
+    id: 2,
+    name: "Tobby",
+    species: "Perro",
+    breed: "French Puddle",
+    age: 3,
+    weight: "13 lbs",
+    lastCheckup: "April 10, 2023",
+    nextVaccination: "October 10, 2023",
+    image: "/mascotas/puddle1.webp",
+  },
+];
 
 export default function PetsPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">My Pets</h1>
-          <p className="text-muted-foreground">Manage your registered pets and their information</p>
+          <h1 className="text-3xl font-bold tracking-tight">Mis mascotas</h1>
+          <p className="text-muted-foreground">
+            Maneje sus mascotas y su informacion
+          </p>
         </div>
         <Button className="animate-transition" asChild>
           <Link href="/client-portal/pets/new">
-            <Plus className="mr-2 h-4 w-4" /> Register New Pet
+            <Plus className="mr-2 h-4 w-4" /> Registrar Nueva Mascota
           </Link>
         </Button>
       </div>
@@ -50,7 +69,9 @@ export default function PetsPage() {
             <CardHeader className="pb-2">
               <div className="flex justify-between items-start">
                 <CardTitle className="text-xl">{pet.name}</CardTitle>
-                <div className="text-sm text-muted-foreground">{pet.age} years old</div>
+                <div className="text-sm text-muted-foreground">
+                  {pet.age} años
+                </div>
               </div>
             </CardHeader>
             <CardContent className="pb-0">
@@ -65,23 +86,27 @@ export default function PetsPage() {
               </div>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Species:</span>
+                  <span className="text-muted-foreground">Especie:</span>
                   <span>{pet.species}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Breed:</span>
+                  <span className="text-muted-foreground">Raza:</span>
                   <span>{pet.breed}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Weight:</span>
+                  <span className="text-muted-foreground">Peso:</span>
                   <span>{pet.weight}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Last Checkup:</span>
+                  <span className="text-muted-foreground">
+                    Ultima revision:
+                  </span>
                   <span>{pet.lastCheckup}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Next Vaccination:</span>
+                  <span className="text-muted-foreground">
+                    Siguien vacunacion:
+                  </span>
                   <span>{pet.nextVaccination}</span>
                 </div>
               </div>
@@ -90,13 +115,13 @@ export default function PetsPage() {
               <Button variant="outline" size="sm" className="flex-1" asChild>
                 <Link href={`/client-portal/medical-records?pet=${pet.id}`}>
                   <FileText className="mr-2 h-4 w-4" />
-                  Medical Records
+                  Registro Medico
                 </Link>
               </Button>
               <Button variant="outline" size="sm" className="flex-1" asChild>
                 <Link href="/client-portal/appointments/new">
                   <CalendarDays className="mr-2 h-4 w-4" />
-                  Schedule Visit
+                  Horarios Programados
                 </Link>
               </Button>
             </CardFooter>
@@ -104,5 +129,5 @@ export default function PetsPage() {
         ))}
       </div>
     </div>
-  )
+  );
 }

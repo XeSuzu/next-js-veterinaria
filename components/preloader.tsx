@@ -1,24 +1,38 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { PawPrintIcon as Paw } from "lucide-react"
+import { useEffect, useState } from "react";
+import { PawPrintIcon as Paw } from "lucide-react";
 
 export default function Preloader() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
-      setLoading(false)
-    }, 2000)
+      setFadeOut(true);
 
-    return () => clearTimeout(timer)
-  }, [])
+      const hideTimer = setTimeout(() => {
+        setLoading(false);
+      }, 500); // Duration of fade-out animation
 
-  if (!loading) return null
+      return () => clearTimeout(hideTimer);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-500">
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-background transition-opacity duration-500 ${
+        fadeOut ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <div className="absolute bottom-4 right-4 text-sm text-muted-foreground opacity-70">
+        Proyecto sin fines de lucro, solo propósitos educativos
+      </div>
       <div className="flex flex-col items-center">
         <div className="animate-bounce mb-4">
           <Paw className="h-16 w-16 text-primary" />
@@ -29,5 +43,5 @@ export default function Preloader() {
         </div>
       </div>
     </div>
-  )
+  );
 }
