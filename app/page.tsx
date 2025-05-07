@@ -35,7 +35,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Hook para animaciones al hacer scroll
   const { ref: aboutRef, inView: aboutInView } = useInView({
     triggerOnce: true,
   });
